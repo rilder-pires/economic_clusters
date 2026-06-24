@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+
+<body>
+
+<h1>Clusters Econômicos dos Estados Brasileiros</h1>
+
+O gráfico abaixo mostra como os estados do brasileiros se comportam em relação ao mercado de trabalho ao longo do tempo, comparando a participação no emprego nacional e sua variação no período. O eixo horizontal, representa a variação da participação do estado no emprego nacional entre 2014 e 2024, indicando crescimento ou perda relativa; o eixo vertical, indica a participação do estado no emprego nacional em 2024, ou seja, seu peso atual no mercado de trabalho; o tamanho das bolhas, representa a quantidade de empregos formais em cada estado; e as cores, que agrupam os estados em clusters econômicos com padrões semelhantes de desempenho (Crescimento/Decrescimento).
+
+
+<div style="position:sticky; top:0; background:white; padding:10px;">
+  <b>Selecione um estado:</b>
+  <select id="menu" onchange="trocarGrafico()">
+    <option value="Acre.html">Acre</option>
+    <option value="Alagoas.html">Alagoas</option>
+    <option value="Amapá.html">Amapá</option>
+    <option value="Amazonas.html">Amazonas</option>
+    <option value="Bahia.html">Bahia</option>
+    <option value="Ceará.html">Ceará</option>
+    <option value="Distrito_Federal.html">Distrito Federal</option>
+    <option value="Espírito_Santo.html">Espírito Santo</option>
+    <option value="Goiás.html">Goiás</option>
+    <option value="Maranhão.html">Maranhão</option>
+    <option value="Mato_Grosso.html">Mato Grosso</option>
+    <option value="Mato_Grosso_do_Sul.html">Mato Grosso do Sul</option>
+    <option value="Minas_Gerais.html">Minas Gerais</option>
+    <option value="Pará.html">Pará</option>
+    <option value="Paraíba.html">Paraíba</option>
+    <option value="Paraná.html">Paraná</option>
+    <option value="Pernambuco.html">Pernambuco</option>
+    <option value="Piauí.html">Piauí</option>
+    <option value="Rio_de_Janeiro.html">Rio de Janeiro</option>
+    <option value="Rio_Grande_do_Norte.html">Rio Grande do Norte</option>
+    <option value="Rio_Grande_do_Sul.html">Rio Grande do Sul</option>
+    <option value="Rondônia.html">Rondônia</option>
+    <option value="Roraima.html">Roraima</option>
+    <option value="Santa_Catarina.html">Santa Catarina</option>
+    <option value="São_Paulo.html">São Paulo</option>
+    <option value="Sergipe.html">Sergipe</option>
+    <option value="Tocantins.html">Tocantins</option>
+  </select>
+</div>
+
+<iframe id="frame" src="Acre.html"
+        width="900" height="620"
+        style="border:none;">
+</iframe>
+
+<br> Fonte: Relação Anual de Informações Sociais (RAIS) - Microdados, Ministério do Trabalho e Emprego (MTE). Elaboração própria com base na metodologia do "Cluster Mapping Project", Prof. Michael E. Porter.
+
+<script>
+function trocarGrafico() {
+    const arquivo = document.getElementById("menu").value;
+    document.getElementById("frame").src = arquivo;
+}
+</script>
+
+</body>
+</html>
